@@ -28,7 +28,7 @@ pipeline {
 
         stage('Build Docker image'){
             steps {
-                sh 'docker build -t ejajkhan10/dockerrepo:${BUILD_NUMBER} .'
+                sh 'docker build -t ejajkhan10/dockerrepo .'
             }
         }
 
@@ -43,7 +43,7 @@ pipeline {
 
         stage('Docker Push'){
             steps {
-                sh 'docker push ejajkhan10/dockerrepo:${BUILD_NUMBER}'
+                sh 'docker push ejajkhan10/dockerrepo'
             }
         }
         
