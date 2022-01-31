@@ -28,7 +28,7 @@ pipeline {
 
         stage('Build Docker image'){
             steps {
-                sh 'docker build -t anvbhaskar/docker_jenkins_pipeline:${BUILD_NUMBER} .'
+                sh 'docker build -t ejajkhan10/dockerrepo:${BUILD_NUMBER} .'
             }
         }
 
@@ -36,7 +36,7 @@ pipeline {
             
             steps {
                  withCredentials([string(credentialsId: 'DockerId', variable: 'Dockerpwd')]) {
-                    sh "docker login -u anvbhaskar -p ${Dockerpwd}"
+                    sh "docker login -u ejajkhan10 -p ${Dockerpwd}"
                 }
             }                
         }
