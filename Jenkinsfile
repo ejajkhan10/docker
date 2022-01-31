@@ -43,13 +43,13 @@ pipeline {
 
         stage('Docker Push'){
             steps {
-                sh 'docker push anvbhaskar/docker_jenkins_pipeline:${BUILD_NUMBER}'
+                sh 'docker push ejajkhan10/dockerrepo:${BUILD_NUMBER}'
             }
         }
         
         stage('Docker deploy'){
             steps {
-                sh 'docker run -itd -p 8081:8080 anvbhaskar/springboot:0.0.3'
+                sh 'docker run -itd -p 8081:8080 ejajkhan10/springboot:0.0.3'
             }
         }
 
