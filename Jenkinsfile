@@ -35,7 +35,7 @@ pipeline {
         stage('Docker Login'){
             
             steps {
-               withCredentials([string(credentialsId: '', variable: 'Dockerhub')]) {
+               withCredentials([string(credentialsId: 'Dockerhub', variable: 'Dockerhub')]) {
                     sh "docker login -u ejajkhan10 -p ${Dockerhub}"
                 }
             }                
